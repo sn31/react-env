@@ -1,5 +1,5 @@
-import React from "react";
-import Ticket from "./Ticket";
+import React from 'react'
+import Ticket from './Ticket'
 
 function TicketList() {
   const TicketData = {
@@ -12,16 +12,16 @@ function TicketList() {
   {
     tickets.push(
       <Ticket
-      location={TicketData.locations[i]}
-      names={TicketData.names[i]}
-      issue={TicketData.issues[i]}
-    />)
+        location={TicketData.locations[i]}
+        names={TicketData.names[i]}
+        issue={TicketData.issues[i]}
+      />)
   }
   return (
     <div>
       {tickets}
     </div>
-  );
+  )
 }
 
-export default TicketList;
+export default TicketList
