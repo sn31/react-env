@@ -2,21 +2,33 @@ import React from 'react'
 import Ticket from './Ticket'
 
 function TicketList() {
-  const TicketData = {
-    locations: ['A1','C3','B4'],
-    names: ['Skye','Meria','Ryan'],
-    issues: ['Stuff is not working','bla','woooah']
-  }
-  let tickets = []
-  for(let i =0;i<TicketData.locations.length;i++)
-  {
+  var masterTicketList = [
+    {
+      names: 'Thato and Haley',
+      location: '3A',
+      issue: 'Firebase won\'t save record. Halp.'
+    },
+    {
+      names: 'Sleater and Kinney',
+      location: '4B',
+      issue: 'Fox image not displaying on page, can only see duck?'
+    },
+    {
+      names: 'Imani & Jacob',
+      location: '9F',
+      issue: 'Donkey picture not displaying on hover in Zoology app. :('
+    }
+  ]
+  let tickets =[]
+  {masterTicketList.map((ticket,index)=>
     tickets.push(
       <Ticket
-        location={TicketData.locations[i]}
-        names={TicketData.names[i]}
-        issue={TicketData.issues[i]}
+        location={ticket.location}
+        names={ticket.names}
+        issue={ticket.issue}
+        key={index}
       />)
-  }
+  )}
   return (
     <div>
       {tickets}
