@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
 function Header() {
-  return(
-    <h1>Help Queue</h1>
-  )
+  return (
+    <div>
+      <h1>Help Queue</h1>
+      <style jsx>{`
+      div {
+        margin-left: 1em;
+      }
+      `}</style>
+    </div>
+  );
 }
 
-export default Header
+export default Header;
