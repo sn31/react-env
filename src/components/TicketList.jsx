@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 function TicketList(props) {
   let tickets =[]
-  {props.ticketList.map((ticket,index)=>
+  {props.ticketList.map((ticket)=>
     tickets.push(
       <Ticket
         location={ticket.location}
         names={ticket.names}
         issue={ticket.issue}
-        key={index}
+        key={ticket.id}
       />)
   )}
   return (
