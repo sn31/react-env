@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
-import { Button, Form, FormGroup,Col,ControlLabel,FormControl } from "react-bootstrap";
+import { Form, FormGroup,Col,ControlLabel,FormControl } from "react-bootstrap";
 import Moment from 'moment';
 
 function NewTicketForm(props) {
@@ -23,7 +23,7 @@ function NewTicketForm(props) {
     _issue.value = '';
   }
   return (
-    <div>
+    <div id="container">
       <Form onSubmit={handleNewTicketFormSubmission}>
         <FormGroup>
           <Col componentClass={ControlLabel} sm={2}>
@@ -56,9 +56,9 @@ function NewTicketForm(props) {
           </Col>
         </FormGroup>
         
-        <Button bsStyle="primary" bsSize="medium" type="submit">
+        <button id="submitBtn" className="btn btn-success" bsSize="large" type="submit">
           Help!
-        </Button>
+        </button>
       </Form>
     </div>
   );

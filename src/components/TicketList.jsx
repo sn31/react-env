@@ -11,7 +11,7 @@ function TicketList(props) {
         names={ticket.names}
         issue={ticket.issue}
         key={ticket.id}
-        timeOpen={ticket.timeOpen}
+        formattedWaitTime={ticket.formattedWaitTime}
       />)
   )}
   return (
