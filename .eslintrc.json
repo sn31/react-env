@@ -37,6 +37,6 @@
     "react/prefer-stateless-function": 2,
     "react/no-unused-state": 2,
     "react/require-render-return": 2,
-    "react/jsx-handler-names": 2,
+    "react/jsx-handler-names": 2
   }
 }
