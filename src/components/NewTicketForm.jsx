@@ -50,7 +50,7 @@ function NewTicketForm(props) {
             Issue
           </Col>
           <Col sm={10}>
-            <FormControl componentClass="textarea" type="text" id="issue" placeholder="Issue" ref={textarea => {
+            <FormControl componentClass="textarea" type="text" id="issue" placeholder="Issue" inputRef={textarea => {
             _issue = textarea;
           }}/>
           </Col>
