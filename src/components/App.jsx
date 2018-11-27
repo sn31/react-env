@@ -8,17 +8,17 @@ import Error404 from './Error404'
 class App extends React.Component {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       masterTicketList: []
-    };
-    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
+    }
+    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this)
   }
 
   handleAddingNewTicketToList(newTicket){
-    var newMasterTicketList = this.state.masterTicketList.slice();
-    newMasterTicketList.push(newTicket);
-    this.setState({masterTicketList: newMasterTicketList});
+    var newMasterTicketList = this.state.masterTicketList.slice()
+    newMasterTicketList.push(newTicket)
+    this.setState({masterTicketList: newMasterTicketList})
   }
 
   render(){
@@ -31,9 +31,9 @@ class App extends React.Component {
           <Route component={Error404} />
         </Switch>
       </div>
-    );
+    )
   }
 
 }
 
-export default App;
+export default App
