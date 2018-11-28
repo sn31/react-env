@@ -13,7 +13,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       masterTicketList: [],
-      selectedTiket: null
+      selectedTicket: null
     }
   }
 
@@ -32,7 +32,7 @@ class App extends React.Component {
   }
 
   updateTicketElapsedWaitTime(){
-    console.log("check");
+   
     let newMasterTicketList = this.state.masterTicketList.slice();
     newMasterTicketList.forEach((ticket)=>
     ticket.formattedWaitTime = (ticket.timeOpen).fromNow(true));
@@ -41,7 +41,7 @@ class App extends React.Component {
 
   handleChangingSelectedTicket(ticket){
     this.setState({selectedTicket:ticket});
-    alert('The selected ticket is now: ' + this.state.selectedTicket.names);
+   
   }
   
 
@@ -52,7 +52,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
           <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList.bind(this)} />} />
-          <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname} onTicketSelection={this.handleChangingSelectedTicket.bind(this)}/>} />
+          <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname} onTicketSelection={this.handleChangingSelectedTicket.bind(this)} selectedTicket={this.state.selectedTicket}/>} />
           <Route component={Error404} />
         </Switch>
       </div>

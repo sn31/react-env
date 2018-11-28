@@ -17,9 +17,6 @@ function Ticket(props) {
         {props.location} - {props.names}
       </h3>
       <h4>{props.formattedWaitTime} ago</h4>
-      <p>
-        <em>{props.issue}</em>
-      </p>
     </div>
   ;
 
