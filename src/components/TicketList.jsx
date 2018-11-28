@@ -10,8 +10,9 @@ function TicketList(props) {
         location={ticket.location}
         names={ticket.names}
         issue={ticket.issue}
-        key={ticket.id}
         formattedWaitTime={ticket.formattedWaitTime}
+        currentRouterPath={props.currentRouterPath}
+        key={ticket.id}
       />)
   )}
   return (
@@ -22,7 +23,8 @@ function TicketList(props) {
 }
 
 TicketList.propTypes = {
-  ticketList: PropTypes.array
+  ticketList: PropTypes.array,
+  currentRouterPath: PropTypes.string
 }
 
 export default TicketList
