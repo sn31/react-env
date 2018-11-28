@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 
 function TicketList(props) {
   let tickets =[]
-  {props.ticketList.map((ticket)=>
+  {Object.keys(props.ticketList).map((ticketId)=>{
+    var ticket = props.ticketList[ticketId];
     tickets.push(
       <Ticket
         location={ticket.location}
@@ -14,8 +15,10 @@ function TicketList(props) {
         currentRouterPath={props.currentRouterPath}
         onTicketSelection={props.onTicketSelection}
         key={ticket.id}
+        ticketId = {ticket.id}
       />)
-  )}
+  })}
+
   return (
     <div>
       {tickets}
@@ -24,7 +27,7 @@ function TicketList(props) {
 }
 
 TicketList.propTypes = {
-  ticketList: PropTypes.array,
+  ticketList: PropTypes.object,
   currentRouterPath: PropTypes.string,
   onTicketSelection: PropTypes.func
 }

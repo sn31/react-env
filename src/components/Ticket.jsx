@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Moment from "moment";
 
 function Ticket(props) {
-  const ticketInfo = 
+  const ticketInfo = (
     <div>
       <style jsx>{`
         div {
@@ -18,15 +18,14 @@ function Ticket(props) {
       </h3>
       <h4>{props.formattedWaitTime} ago</h4>
     </div>
-  ;
-
+  );
   if (props.currentRouterPath === "/admin") {
     return (
-      <div onClick={() => {
-        props.onTicketSelection({
-          names: props.names, location: props.location, issue: props.issue, formattedWaitTime: props.formattedWaitTime
-        });
-      }}>
+      <div
+        onClick={() => {
+          props.onTicketSelection(props.ticketId);
+        }}
+      >
         {ticketInfo}
       </div>
     );
@@ -41,6 +40,7 @@ Ticket.propTypes = {
   issue: PropTypes.string,
   formattedWaitTime: PropTypes.string.isRequired,
   currentRouterPath: PropTypes.string,
-  onTicketSelection: PropTypes.func
+  onTicketSelection: PropTypes.func,
+  ticketId: PropTypes.string.isRequired
 };
 export default Ticket;
