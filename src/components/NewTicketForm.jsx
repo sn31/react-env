@@ -1,8 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { v4 } from "uuid";
 import { Form, FormGroup,Col,ControlLabel,FormControl } from "react-bootstrap";
 import Moment from 'moment';
+import {connect} from 'react-redux';
 
 function NewTicketForm(props) {
   let _names = null;
@@ -10,13 +10,18 @@ function NewTicketForm(props) {
   let _issue = null;
 
   function handleNewTicketFormSubmission(event) {
+    const {dispatch} = props;
     event.preventDefault();
-    props.onNewTicketCreation({
+    const action ={
+      type: 'ADD_TICKET',
+      id: v4(),
       names: _names.value,
       location: _location.value,
       issue: _issue.value,
-      timeOpen: new Moment()
-    });
+      timeOpen: new Moment() 
+    }
+    dispatch(action);
+   
     _names.value = '';
     _location.value = '';
     _issue.value = '';
@@ -55,7 +60,7 @@ function NewTicketForm(props) {
           </Col>
         </FormGroup>
         
-        <button id="submitBtn" className="btn btn-success" bsSize="large" type="submit">
+        <button id="submitBtn" className="btn btn-success" type="submit">
           Help!
         </button>
       </Form>
@@ -63,7 +68,6 @@ function NewTicketForm(props) {
   );
 }
 
-NewTicketForm.propTypes = {
-  onNewTicketCreation: PropTypes.func
-};
-export default NewTicketForm;
+
+
+export default connect()(NewTicketForm);
