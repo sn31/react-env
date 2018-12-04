@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Moment from "moment";
 import {connect} from 'react-redux';
 
 function Ticket(props) {
@@ -48,6 +47,7 @@ Ticket.propTypes = {
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
   currentRouterPath: PropTypes.string,
+  formattedWaitTime:PropTypes.string.isRequired,
   ticketId: PropTypes.string.isRequired
 };
 export default connect()(Ticket);
