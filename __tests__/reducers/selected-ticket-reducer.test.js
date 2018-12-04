@@ -1,3 +1,4 @@
+import c from './../../src/constants';
 import selectedticketReducer from "./../../src/reducers/selected-ticket-reducer";
 
 describe("selectedTicketReducer", () => {
@@ -6,6 +7,6 @@ describe("selectedTicketReducer", () => {
   });
 
   test("Should record which ticket has been selected by user", () => {
-      expect(selectedticketReducer({},{type:'SELECT_TICKET',ticketId:1})).toEqual(1);
+      expect(selectedticketReducer({},{type:c.SELECT_TICKET,ticketId:1})).toEqual(1);
   });
 });
