@@ -75,7 +75,7 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    masterTicketList: state
+    masterTicketList: state.masterTicketList,
   }
 };
 
